@@ -100,98 +100,154 @@
 <title></title>
 </head>
 <style>
-.element {
-    border-radius: 40px;  /* 요소의 모서리를 40px 반지름으로 둥글게 만듬 */
-    border: 2px solid black; /* 검정색 2px 실선 테두리 */
-    width: 200px;  /* 요소의 너비를 200px로 설정 */
-    height: 200px;  /* 요소의 높이를 200px로 설정 */
-    margin: 20px auto;  /* 요소를 수평으로 가운데 정렬, 위 아래에 20px 여백 추가 */
-    display: flex;  /* Flexbox 레이아웃으로 설정 */
-    justify-content: center;  /* 가로 방향으로 내용 중앙 정렬 */
-    align-items: center;  /* 세로 방향으로 내용 중앙 정렬 */
-}
-
-h1 {
-    color: black;  /* 제목의 텍스트 색상을 lightblue로 설정 */
-    text-align: center;  /* 제목을 중앙 정렬 */
-    font-family: Arial, sans-serif;  /* 글꼴을 Arial로 설정 */
-    font-size: 42px;  /* 글자 크기를 36px로 설정 */
-    margin-bottom: 20px;  /* 제목 아래에 20px 여백 추가 */
-}
-
-body {
-    background-color: white;  /* 페이지 배경 색상을 ivory로 설정 */
-    color: #15b8f9;  /* 텍스트 색상을 #15b8f9로 설정 */
-    font-family: 'Verdana', sans-serif;  /* 글꼴을 Verdana로 설정 */
-    margin: 0;  /* 페이지의 기본 여백을 제거 */
-    padding: 0;  /* 페이지의 기본 패딩을 제거 */
-    display: flex;  /* Flexbox 레이아웃으로 설정 */
-    justify-content: center;  /* 페이지의 내용을 가로로 중앙 정렬 */
-    align-items: center;  /* 페이지의 내용을 세로로 중앙 정렬 */
-    height: 100vh;  /* 페이지 높이를 100%로 설정하여 화면 전체를 채우도록 함 */
-    flex-direction: column;  /* 세로 방향으로 요소 배치 */
-}
-
-form {
-    text-align: center;  /* 폼 내용을 중앙 정렬 */
-    margin-bottom: 30px;  /* 폼 아래에 30px 여백 추가 */
-}
-
-button {
-    padding: 10px 20px;  /* 버튼에 10px 상하 여백, 20px 좌우 여백 추가 */
-    background-color: #15b8f9;  /* 버튼 배경 색상을 #15b8f9로 설정 */
-    border: none;  /* 버튼의 기본 테두리 제거 */
-    color: white;  /* 버튼 텍스트 색상을 흰색으로 설정 */
-    font-size: 16px;  /* 버튼 텍스트 크기를 16px로 설정 */
-    cursor: pointer;  /* 버튼에 마우스를 올리면 클릭할 수 있음을 표시 */
-    border-radius: 15px;  /* 버튼의 모서리를 5px로 둥글게 설정 */
-}
-
-button:hover {
-    background-color: #1089a8;  /* 버튼에 마우스를 올리면 배경 색상이 #1089a8로 변경 */
-}
-
-.pagination {
-    display: flex;  /* Flexbox 레이아웃으로 설정 */
-    justify-content: center;  /* 페이징 버튼을 가로로 중앙 정렬 */
-    align-items: center;  /* 페이징 버튼을 세로로 중앙 정렬 */
-    gap: 10px;  /* 버튼 간의 간격을 10px로 설정 */
-    margin-top: 20px;  /* 페이징 상단에 20px 여백 추가 */
-}
-
-.pagination button {
-    padding: 8px 16px;  /* 페이징 버튼에 8px 상하 여백, 16px 좌우 여백 추가 */
-    background-color: #15b8f9;  /* 페이징 버튼 배경 색상을 #15b8f9로 설정 */
-    border: none;  /* 페이징 버튼의 기본 테두리 제거 */
-    color: white;  /* 페이징 버튼 텍스트 색상을 흰색으로 설정 */
-    font-size: 16px;  /* 페이징 버튼 텍스트 크기를 16px로 설정 */
-    cursor: pointer;  /* 페이징 버튼에 마우스를 올리면 클릭할 수 있음을 표시 */
-    border-radius: 5px;  /* 페이징 버튼의 모서리를 5px로 둥글게 설정 */
-}
-
-.pagination button:hover {
-    background-color: #1089a8;  /* 페이징 버튼에 마우스를 올리면 배경 색상이 #1089a8로 변경 */
-}
-
-/* 테이블 모서리 둥글게 만들기 */
-table {
-    border-collapse: separate;  /* 셀 간의 경계를 분리하여 둥글게 만든 테두리가 유지되도록 설정 */
-    border-radius: 60px;  /* 테이블 모서리를 10px로 둥글게 만듦 */
-    overflow: hidden;  /* 테이블 경계를 넘는 부분을 숨겨서 둥글게 보이도록 처리 */
-    width: 66%;  /* 테이블 너비를 100%로 설정하여 전체 페이지에 맞게 확장 */
-}
-
-table, th, td {
-    border: 2px solid white;  /* 테이블과 셀들의 테두리를 #15b8f9 색상으로 설정 */
-}
-
-th, td {
-    padding: 10px;  /* 셀 내 내용에 10px의 여백을 추가 */
-    text-align: center;  /* 셀의 내용 중앙 정렬 */
-    #id {
-   	color: black;
-   }
-}
+			body {
+			    background-color: #0d0d0d;
+			    color: #e0e0e0;
+			    font-family: 'Verdana', sans-serif;
+			    margin: 0;
+			    padding: 0;
+			    display: flex;
+			    justify-content: center;
+			    align-items: center;
+			    height: 100vh;
+			    flex-direction: column;
+			}
+			
+			.element-strange {
+			    border-radius: 20px;
+			    border: 2px solid #0f4c75;
+			    width: 250px;
+			    height: 250px;
+			    margin: 20px auto;
+			    display: flex;
+			    justify-content: center;
+			    align-items: center;
+			    background-color: #1c1c1c;
+			    box-shadow: 0 4px 20px rgba(15, 76, 117, 0.7);
+			    position: relative;
+			    animation: strangeChaos 5s infinite alternate;
+			}
+			
+			@keyframes strangeChaos {
+			    0% {
+			        transform: scale(1);
+			        box-shadow: 0 4px 20px rgba(15, 76, 117, 0.5);
+			        filter: blur(0);
+			    }
+			    50% {
+			        transform: scale(1.05);
+			        box-shadow: 0 8px 40px rgba(0, 204, 255, 0.8);
+			        filter: blur(5px);
+			        background-color: #171717;
+			    }
+			    100% {
+			        transform: scale(1.1);
+			        box-shadow: 0 12px 60px rgba(75, 0, 130, 0.9);
+			        filter: blur(10px);
+			        background-color: #1f1f1f;
+			    }
+			}
+			
+			h1 {
+			    color: #0f4c75;
+			    font-family: 'Arial', sans-serif;
+			    font-size: 48px;
+			    margin-bottom: 20px;
+			    text-shadow: 3px 3px 6px rgba(0, 204, 255, 0.6);
+			    animation: textPulse 4s infinite alternate;
+			}
+			
+			@keyframes textPulse {
+			    0% {
+			        text-shadow: 3px 3px 6px rgba(0, 204, 255, 0.6);
+			        transform: scale(1);
+			    }
+			    50% {
+			        text-shadow: 6px 6px 12px rgba(75, 0, 130, 0.8);
+			        transform: scale(1.1);
+			    }
+			    100% {
+			        text-shadow: 3px 3px 6px rgba(255, 105, 180, 0.8);
+			        transform: scale(1);
+			    }
+			}
+			
+			button {
+			    padding: 14px 28px;
+			    background-color: #0f4c75;
+			    border: none;
+			    color: white;
+			    font-size: 18px;
+			    font-weight: bold;
+			    cursor: pointer;
+			    border-radius: 30px;
+			    transition: background-color 0.3s ease, transform 0.2s ease;
+			    box-shadow: 0 4px 8px rgba(15, 76, 117, 0.3);
+			}
+			
+			button:hover {
+			    background-color: #0a3e58;
+			    transform: scale(1.1);
+			}
+			
+			.pagination {
+			    display: flex;
+			    justify-content: center;
+			    align-items: center;
+			    gap: 20px;
+			    margin-top: 30px;
+			}
+			
+			.pagination button {
+			    padding: 12px 24px;
+			    background-color: #0f4c75;
+			    border: none;
+			    color: white;
+			    font-size: 16px;
+			    font-weight: bold;
+			    cursor: pointer;
+			    border-radius: 25px;
+			    transition: background-color 0.3s ease, transform 0.2s ease;
+			}
+			
+			.pagination button:hover {
+			    background-color: #0a3e58;
+			    transform: scale(1.1);
+			}
+			
+			table {
+			    border-collapse: separate;
+			    border-radius: 12px;
+			    overflow: hidden;
+			    width: 80%;
+			    margin-top: 20px;
+			    background-color: #333;
+			    box-shadow: 0 6px 12px rgba(15, 76, 117, 0.3);
+			}
+			
+			table, th, td {
+			    border: 2px solid #0f4c75;
+			}
+			
+			th, td {
+			    padding: 15px;
+			    text-align: center;
+			    font-size: 16px;
+			    color: #f0f0f0;
+			}
+			
+			th {
+			    background-color: #0f4c75;
+			    color: white;
+			}
+			
+			td {
+			    background-color: #2b2b2b;
+			}
+			
+			#id {
+			    color: #0f4c75;
+			}
 </style>
 <body>
     <h1>Rental List</h1>
