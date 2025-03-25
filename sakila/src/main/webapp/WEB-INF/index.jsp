@@ -6,6 +6,9 @@
 <title>Index</title>
 </head>
 <body>
-
+	<h1>Index</h1>
+	<ol>
+		<li><a href="/sakila/d0325/rentalList.jsp">대여 목록</a></li>
+	</ol>
 </body>
 </html>
