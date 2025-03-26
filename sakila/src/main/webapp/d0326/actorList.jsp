@@ -182,7 +182,7 @@
             background-color: #2980b9; /* 기본 블루 */
             color: white;
             font-size: 1.1em;
-            border-radius: 25px;
+            border-radius: 23px;
             text-decoration: none;
         }
 

@@ -126,7 +126,7 @@
             padding: 20px;
             text-align: center;
             border: 1px solid #ff7043; /* 따뜻한 갈색 선 */
-            font-size: 1.2em;
+            font-size: 1.1em;
         }
 
         th {
