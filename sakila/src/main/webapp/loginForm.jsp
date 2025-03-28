@@ -17,116 +17,109 @@
 <meta charset="UTF-8">
 <title></title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
-
-* { 
-  margin: 0; 
-  padding: 0; 
-  box-sizing: border-box; 
-}
-
-body {
-  font-family: "Noto Sans KR", sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #fff; 
-  color: #333; 
-}
-
-.login-container {
-  background-color: rgba(0, 0, 0, 0.7); 
-  padding: 50px 40px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); 
-  width: 100%;
-  max-width: 1000px;
-  text-align: center;
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  color: #ff6600; 
-  font-weight: bold;
-}
-
-input[type="number"], input[type="password"] {
-  width: 100%;
-  padding: 15px;
-  margin: 15px 0;
-  border-radius: 10px;
-  border: 1px solid #ccc; 
-  background-color: #f8f8f8; 
-  color: #333;
-  font-size: 1.2rem;
-}
-
-input[type="number"]:focus, input[type="password"]:focus {
-  outline: none;
-  border: 2px solid #ff6600; 
-}
-
-button {
-  width: 100%;
-  padding: 15px;
-  background-color: #ff6600; 
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #ff4500; 
-}
-
-button:active {
-  background-color: #e64a19; 
-}
-
-footer {
-  margin-top: 20px;
-  font-size: 0.9rem;
-  color: #888;
-}
-
-footer a {
-  color: #ff6600; 
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
+ body {
+    background: linear-gradient(to right, #ffcc99, #6699cc);
+    font-family: 'Poppins', sans-serif;
+    color: #3a3a3a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('https://example.com/path/to/your/background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    animation: float 4s ease-in-out infinite;
+  }
 
 
-th {
-  background-color: #ff6600; 
-  color: white; 
-  padding: 15px 25px; 
-  font-weight: bold;
-  text-align: center;
+  h1 {
+    font-size: 3rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  th {
+    font-size: 1.2rem;
+    padding: 10px;
+    background-color: #ffcc66;
+    color: #3a3a3a;
+    text-align: center;
+    border-radius: 5px;
+  }
+
+  td {
+    padding: 10px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+
+  input[type="number"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #3a3a3a;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+
+  input[type="number"]:focus, input[type="password"]:focus {
+    border-color: #ffcc66;
+    outline: none;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffcc66;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #ffb84d;
+    transform: scale(1.05);
+  }
+#login {
+	width : 410px;
+	height: 500px;
 }
 </style>
 </head>
 <body>
-	<h1>로그인</h1>
+	
 	<form action="/sakila/loginAction.jsp">
+	<div id = "login">
 		<table border="1">
 			<tr>
-				<th>로그인</th>
+				<th>LOGIN</th>
 				<td><input type="number" name="staffId">
 			</tr>
 			<tr>
-				<th>비밀번호</th>
+				<th>PW</th>
 				<td><input type="password" name="password">
 			</tr>
 		</table>
 		<button type="submit">로그인</button>
+	</div>
 	</form>
 </body>
 </html>
