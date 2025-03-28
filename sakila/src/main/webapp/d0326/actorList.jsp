@@ -1,6 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@ page import="java.sql.*" %>
+<%
+
+	Integer staffId = (Integer)(session.getAttribute("loginStaff"));
+			
+	if(staffId != null) {
+		response.sendRedirect("/sakila/index.jsp");
+		return;
+	}
+%>
+
 
 <%
     String searchWord = request.getParameter("searchWord");
@@ -207,8 +217,13 @@
     </style>
 </head>
 <body>
+    <div>
+		<%=staffId %>님 반갑습니다.
+		<a href ="/sakila/logOut.jsp">[로그아웃]</a>
+             </div>
     <h1>배우 정보</h1>
     <table border="1" id="table1">
+    
     <tr>
         <th>배우 이름</th>
     </tr>

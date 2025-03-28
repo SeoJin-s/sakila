@@ -1,6 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@ page import="java.sql.*" %>
+<%
+
+	Integer staffId = (Integer)(session.getAttribute("loginStaff"));
+			
+	if(staffId != null) {
+		response.sendRedirect("/sakila/index.jsp");
+		return;
+	}
+%>
 
 <%
     String searchWord = request.getParameter("searchWord");
@@ -82,8 +91,8 @@
 <style>
     /* 전체 배경 색상과 글꼴 설정 */
     body {
-        background-color: #f9f9f9; /* 미키 마우스의 밝고 깨끗한 느낌을 반영 */
-        font-family: 'Arial', sans-serif;
+        background-color: #fff5e0; /* 따뜻한 크림색 배경 */
+        font-family: 'Comic Sans MS', sans-serif; /* 귀여운 느낌의 글꼴 */
         margin: 0;
         padding: 0;
     }
@@ -91,119 +100,123 @@
     /* 페이지 헤더 스타일 */
     h1 {
         text-align: center;
-        font-size: 2.2em; /* 조금 작은 크기로 수정 */
-        color: #ffcc00; /* 미키 마우스의 대표적인 노란색 */
-        margin-top: 30px; /* 상단 여백 줄이기 */
-        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+        font-size: 2.5em; /* 조금 더 큰 글자 */
+        color: #f4c542; /* 곰돌이 푸의 노란색 */
+        margin-top: 40px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
     }
 
     /* 테이블 스타일 */
     table {
-        width: 70%; /* 테이블 폭 줄이기 */
-        margin: 30px auto; /* 테이블과 다른 요소 사이의 여백 줄이기 */
+        width: 80%; /* 테이블 폭 증가 */
+        margin: 40px auto;
         border-collapse: collapse;
-        background-color: #ff5733; /* 미키 마우스의 빨간색 반영 */
-        border-radius: 12px; /* 모서리 둥글게 */
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        background-color: #d68e3a; /* 곰돌이 푸의 갈색 */
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
 
     th, td {
-        padding: 15px; /* 셀 안의 패딩을 줄여서 크기 감소 */
+        padding: 18px;
         text-align: center;
-        border: 1px solid #ff5722; /* 따뜻한 느낌의 붉은 색 */
+        border: 1px solid #d68e3a; /* 테이블 테두리 색상 */
     }
 
     th {
-        background-color: #ffcc00; /* 미키 마우스의 노란색 */
-        color: black;
-        font-size: 1.3em; /* 글자 크기 조금 줄이기 */
+        background-color: #f4c542; /* 노란색 헤더 */
+        color: #fff;
+        font-size: 1.4em;
         text-transform: uppercase;
-        border-radius: 8px;
+        border-radius: 10px;
     }
 
     td {
-        background-color: #fff3e0; /* 부드러운 크림색 */
-        color: #333;
-        font-size: 1.1em; /* 글자 크기 조금 줄이기 */
+        background-color: #fff9d9; /* 부드러운 노란색 배경 */
+        color: #5a4e42; /* 갈색 글자 */
+        font-size: 1.1em;
     }
 
     /* 링크 스타일 */
     td a {
-        color: #000000; /* 미키 마우스의 전통적인 검정색 */
+        color: #5a4e42; /* 곰돌이 푸의 갈색 */
         font-weight: bold;
-        font-size: 1.1em; /* 글자 크기 조금 줄이기 */
+        font-size: 1.1em;
         text-decoration: none;
     }
 
     td a:hover {
-        color: #ff5733; /* 마우스를 올렸을 때 빨간색으로 변경 */
+        color: #f4c542; /* 마우스를 올렸을 때 노란색으로 변경 */
         text-decoration: underline;
     }
 
     /* 페이지네이션 스타일 */
     #pagination {
         text-align: center;
-        margin-top: 15px;
+        margin-top: 20px;
     }
 
     #pagination a {
-        margin: 0 4px;
-        padding: 8px 12px; /* 패딩 크기 줄이기 */
-        background-color: #ff5733; /* 미키 마우스의 빨간색 */
+        margin: 0 6px;
+        padding: 10px 16px; /* 패딩 크기 증가 */
+        background-color: #d68e3a; /* 곰돌이 푸의 갈색 */
         color: white;
         text-decoration: none;
-        border-radius: 4px;
-        font-size: 1.1em; /* 글자 크기 조금 줄이기 */
+        border-radius: 6px;
+        font-size: 1.2em; /* 페이지 번호 글자 크기 증가 */
     }
 
     #pagination a:hover {
-        background-color: #ff5722; /* 마우스를 올렸을 때 더 밝은 빨간색 */
+        background-color: #f4c542; /* 노란색으로 hover 효과 */
     }
 
     #pagination strong {
-        color: #ffcc00; /* 현재 페이지는 노란색으로 강조 */
+        color: #d68e3a; /* 현재 페이지는 갈색으로 강조 */
     }
 
     /* 버튼 스타일 */
     .search-btn {
         display: block;
-        width: 180px; /* 버튼 폭 줄이기 */
-        margin: 20px auto; /* 여백 줄이기 */
+        width: 200px; /* 버튼 폭 증가 */
+        margin: 20px auto;
         padding: 12px;
-        background-color: #ff5733; /* 미키 마우스의 빨간색 */
+        background-color: #d68e3a; /* 곰돌이 푸의 갈색 */
         color: white;
-        font-size: 1.2em; /* 글자 크기 줄이기 */
+        font-size: 1.3em;
         font-weight: bold;
         text-align: center;
-        border-radius: 8px; /* 모서리 둥글게 */
+        border-radius: 8px;
         cursor: pointer;
         transition: background-color 0.3s ease;
     }
 
     .search-btn:hover {
-        background-color: #ff5722; /* 호버 시 빨간색으로 변경 */
+        background-color: #f4c542; /* 노란색으로 hover 효과 */
     }
 
-    /* 영화 제목 텍스트 스타일 */
-    .film-title {
-        font-size: 1.2em; /* 제목 크기 줄이기 */
-        color: #000000;
+    /* 로그아웃 버튼 스타일 */
+    .logout-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #d68e3a; /* 갈색 */
+        color: white;
+        font-size: 1.1em;
         font-weight: bold;
-        text-align: center;
-    }
-
-    .film-title a {
-        color: #ff5733;
         text-decoration: none;
+        border-radius: 8px;
+        margin: 20px 0;
     }
 
-    .film-title a:hover {
-        color: #ffcc00;
-        text-decoration: underline;
+    .logout-btn:hover {
+        background-color: #f4c542; /* 노란색으로 hover 효과 */
     }
+
 </style>
 </head>
 <body>
+	<div>
+		<%=staffId %>님 반갑습니다.
+		<a href ="/sakila/logOut.jsp">[로그아웃]</a>
+             </div>
     <h1>영화 목록</h1>
 
     <form action="/sakila/d0326/filmList.jsp">
@@ -253,6 +266,7 @@
     <% } %>  
     	<a href='/sakila/d0326/filmList.jsp?searchWord=<%= searchWord %>&currentPage=<%= lastPage %>'>[마지막]</a>
     </div>
+    
 
 </body>
 </html>

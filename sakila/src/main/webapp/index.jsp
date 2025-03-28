@@ -17,7 +17,7 @@
 <body>
 	<div>
 		<%=staffId %>님 반갑습니다.
-		<a href ="/sakila/logout.jsp">[로그아웃]</a>
+		<a href ="/sakila/logOut.jsp">[로그아웃]</a>
 		<a href ="/sakila/updatePasswordForm.jsp">[비밀번호 수정]</a>
 	</div>
 	
