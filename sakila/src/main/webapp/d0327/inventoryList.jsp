@@ -6,7 +6,7 @@
 
 	Integer staffId = (Integer)(session.getAttribute("loginStaff"));
 			
-	if(staffId != null) {
+	if(staffId == null) {
 		response.sendRedirect("/sakila/index.jsp");
 		return;
 	}
@@ -234,7 +234,7 @@
             <th>비디오번호</th>
             <th>영화 제목</th>
             <th>대여 가능 여부</th>
-            <th>반납</th>
+            <th>대여 링크</th>
         </tr>
 
         <% 
@@ -245,7 +245,8 @@
                 <td><%= rental.get("inventory_id") %></td>
                 <td><%= rental.get("film_title") %></td>
                 <td><%= rental.get("isRental") %></td>
-                <td><input type="submit" value="반납"> </td>
+                <td><a href="/sakila/d0327/insertRentalForm.jsp?inventoryId=1">대여하기</a></td>
+
             </tr>
         <% } %>
     </table>

@@ -5,7 +5,7 @@
 
 	Integer staffId = (Integer)(session.getAttribute("loginStaff"));
 			
-	if(staffId != null) {
+	if(staffId == null) {
 		response.sendRedirect("/sakila/index.jsp");
 		return;
 	}
