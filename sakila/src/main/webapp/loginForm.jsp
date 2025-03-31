@@ -106,7 +106,15 @@
 </head>
 <body>
 	
-	<form action="/sakila/loginAction.jsp">
+	<form action="/sakila/loginAction.jsp" method="post"> 
+	<!-- 
+	 a 태그랑 동일한 방식 loginAction.hsp?number= & password= -
+	 매개값이 노출, 브라우저 주소창에 문자열 형태로 넘어간다 < 대신 길이가 제한
+	 
+	 데이터값을 매개값으로 다른 페이지로 전송하는 방법은
+	 1) a 태그 : get 방식 ( 길이가 제한되고 노출)
+	 2) form 태그의 method 속성은 : get 과 post( 길이가 제한되지않고 노출되지않는다)
+	-->
 	<div id = "login">
 		<table border="1">
 			<tr>

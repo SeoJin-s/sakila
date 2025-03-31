@@ -14,75 +14,80 @@
     <meta charset="UTF-8">
     <title></title>
   <style>
-        body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background-color: #ffefb4;
-            margin: 0;
-            padding: 0;
+body {
+            background: linear-gradient(to right, #ffcc99, #6699cc);
+            font-family: 'Poppins', sans-serif;
+            color: #3a3a3a;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-        }
-
-        .container {
-            background-color: #fff;
-            padding: 30px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 15px;
-            width: 400px;
-            text-align: center;
-            border: 3px solid #e7a712;
+            margin: 0;
         }
 
         h1 {
-            color: #e7a712;
-            font-size: 30px;
+            font-size: 3rem;
+            color: #ffffff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
             margin-bottom: 20px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            text-align: center;
         }
 
         table {
-            width: 100%;
-            margin-bottom: 20px;
+            border-collapse: collapse;
+            width: 80%;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         th {
-            font-size: 18px;
-            color: #d45d29;
-            text-align: left;
-            padding-right: 10px;
+            font-size: 1.2rem;
+            padding: 10px;
+            background-color: #ffcc66;
+            color: #3a3a3a;
+            text-align: center;
+            border-radius: 5px;
         }
 
         td {
             padding: 10px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 5px;
         }
 
         input[type="password"] {
             width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: 2px solid #d45d29;
-            border-radius: 8px;
-            font-size: 16px;
-            background-color: #fff;
-            color: #333;
+            padding: 10px;
+            border: 2px solid #3a3a3a;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        input[type="password"]:focus {
+            border-color: #ffcc66;
+            outline: none;
         }
 
         button {
             width: 100%;
-            padding: 12px;
-            background-color: #e7a712;
+            padding: 10px;
+            background-color: #ffcc66;
             border: none;
-            color: white;
-            font-size: 18px;
-            border-radius: 8px;
+            border-radius: 5px;
+            font-size: 1.2rem;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
         }
 
         button:hover {
-            background-color: #d18711;
+            background-color: #ffb84d;
+            transform: scale(1.05);
         }
     </style>
 </head>
