@@ -41,6 +41,86 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f0f8ff;
+        color: #444444;
+        text-align: center;
+    }
+
+    h1 {
+        color: #ff5733;
+    }
+
+    form {
+        background-color: #e6f7ff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        margin: 20px;
+    }
+
+    table {
+        width: 100%;
+        margin: 20px 0;
+        border-collapse: collapse;
+    }
+
+    table, td {
+        border: 2px solid #ff5733;
+    }
+
+    td {
+        padding: 10px;
+        text-align: left;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ff5733;
+    }
+
+    button {
+        background-color: #ff5733;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+    button:hover {
+        background-color: #c0392b;
+    }
+
+    input[type="text"]:readonly {
+        background-color: #f2f2f2;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .button-container button {
+        margin: 0 10px;
+    }
+
+    form input[type="text"] {
+        background-color: #fff;
+        border: 2px solid #f39c12;
+    }
+
+    input[type="text"]:focus {
+        border-color: #f1c40f;
+        box-shadow: 0 0 5px rgba(241, 196, 15, 0.7);
+    }
+</style>
 </head>
 	<body>
 		<h1>Insert Rental Inventory</h1>
@@ -83,7 +163,8 @@
 						<td><input type="text" name="staffId" value='<%=staffId%>' readonly></td>
 					</tr>
 				</table>
-				<button type="submit">대여하기</button>
+				<button type="submit" name="action" value="rent">대여하기</button>
+				<button type="submit" name="action" value="return">반납하기</button>
 			</form>
 		
 		<%

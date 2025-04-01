@@ -24,6 +24,7 @@
 	conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sakila", "root", "java1234");
 	stmt = conn.prepareStatement(sql);
 	stmt.setInt(1, inventoryId);
+	
 	stmt.setInt(2, customerId);
 	stmt.setInt(3, staffId);
 	System.out.println(stmt);

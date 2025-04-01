@@ -21,6 +21,95 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4faff;
+        color: #4a4a4a;
+        text-align: center;
+        padding: 20px;
+    }
+
+    h1 {
+        color: #ff6f00;
+    }
+
+    table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+        background-color: #ffffff;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    table, th, td {
+        border: 2px solid #ff6f00;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #ffeb3b;
+        color: #d32f2f;
+    }
+
+    td {
+        background-color: #fff3e0;
+    }
+
+    tr:nth-child(even) td {
+        background-color: #ffcc80;
+    }
+
+    a {
+        color: #ff6f00;
+        font-weight: bold;
+        text-decoration: none;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    a:hover {
+        background-color: #ff7043;
+        color: white;
+    }
+
+    .inactive {
+        background-color: #f44336;
+        color: white;
+    }
+
+    .active {
+        background-color: #388e3c;
+        color: white;
+    }
+
+    input[type="text"] {
+        padding: 8px;
+        width: 250px;
+        border-radius: 5px;
+        border: 1px solid #ff6f00;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    button {
+        background-color: #ff6f00;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #f57c00;
+    }
+
+</style>
 </head>
 <body>1
 	<table border ="1">

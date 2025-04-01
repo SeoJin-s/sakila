@@ -12,7 +12,79 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Index</title>
+<title>목록</title>
+<style>
+    /* 전체 페이지를 중앙 정렬 */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f9fbe7;
+        color: #4a4a4a;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        text-align: center;
+    }
+
+    h1 {
+        color: #ff6f00;
+        font-size: 2.5em;
+        margin: 0;
+    }
+
+    /* div 스타일을 상단 중앙으로 */
+    div {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        width: 100%;
+    }
+
+    a {
+        color: #ff6f00;
+        text-decoration: none;
+        font-weight: bold;
+        margin-left: 15px;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    a:hover {
+        background-color: #ff7043;
+        color: white;
+    }
+
+    ol {
+        font-size: 1.2em;
+        line-height: 1.6;
+        padding-left: 20px;
+    }
+
+    ol li {
+        margin: 10px 0;
+    }
+
+    ol li a {
+        color: #ff6f00;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    ol li a:hover {
+        text-decoration: underline;
+    }
+
+    .header {
+        font-size: 1.5em;
+        color: #d32f2f;
+        margin-bottom: 10px;
+    }
+</style>
 </head>
 <body>
 	<div>
