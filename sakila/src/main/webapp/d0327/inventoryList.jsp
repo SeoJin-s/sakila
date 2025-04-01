@@ -245,7 +245,7 @@
                 <td><%= rental.get("inventory_id") %></td>
                 <td><%= rental.get("film_title") %></td>
                 <td><%= rental.get("isRental") %></td>
-                <td><a href="/sakila/d0327/insertRentalForm.jsp?inventoryId=1">대여하기</a></td>
+                <td><a href="/sakila/d0327/insertRentalForm.jsp?inventoryId=<%= rental.get("inventory_id") %>">대여하기</a></td>
 
             </tr>
         <% } %>

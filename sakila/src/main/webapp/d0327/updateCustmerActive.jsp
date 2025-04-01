@@ -21,5 +21,5 @@
  	 
  	stmt.executeUpdate();
  	 
- 	response.sendRedirect("/sakila/d0325/inventoryList.jsp");
+ 	response.sendRedirect("/sakila/d0327/inventoryList.jsp");
  %>

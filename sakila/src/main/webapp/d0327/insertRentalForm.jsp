@@ -2,7 +2,12 @@
 <%@ page import ="java.sql.*" %>
 <%
    // staff 로그인 session 확인
-   
+	Integer staffId = (Integer)session.getAttribute("loginStaff");
+	
+	if (staffId == null) { // 로그아웃 상태라면
+		response.sendRedirect("/sakila/loginForm.jsp");
+		return;
+	}
    /*
       `rental_id` INT NOT NULL AUTO_INCREMENT,
       `rental_date` DATETIME NOT NULL, curdate() or now() or sysdate...
@@ -12,7 +17,6 @@
       `staff_id` TINYINT UNSIGNED NOT NULL, session
    */
    Integer inventoryId = Integer.parseInt(request.getParameter("inventoryId"));
-   Integer staffId   = (Integer)session.getAttribute("loginStaff");
    Integer customerId = null;
    if(request.getParameter("customerId") != null) {
       // 이름검색 후 이 페이지가 다시 요청되면 customerId값을 받아 온다
@@ -38,54 +42,53 @@
 <meta charset="UTF-8">
 <title></title>
 </head>
-<body>
-   <h1>대여 하기</h1>
-   <%
-      if(rs.next()) {
-   %>
-      <form action="/sakila/d0327/searchCustomIdList.jsp" method="post">
-         <input type="hidden" name="inventoryId" value="<%=inventoryId%>">
-         <input type="text" name="searchName">
-         <button type="submit">이름으로 customerId검색</button>
-      </form>
-      <!-- 
-         insertRentalForm.jsp -> 이름검색 -> customerListByName.jsp -> insertRentalForm.jsp
-       -->
-      
-      
-      <form action="/sakila/d0327/insertRentalAction.jsp" method="post">
-         <table border="1">
-            <tr>
-               <td>ID</td>
-               <td>
-                  <input type="text" name="customerId" value="<%=customerId%>" readonly>
-               </td>
-            </tr>
-         
-            <tr>
-               <td>사용자</td>
-               <td><input type="text" name="inventoryId" value="<%=inventoryId%>" readonly></td>
-            </tr>
-            <tr>
-               <td>영화</td>
-               <td>
-                  <input type="text" name="filmId" value="<%=rs.getInt("filmId")%>" readonly> / 
-                  <%=rs.getString("title")%>
-               </td>
-            </tr>
-            <tr>
-               <td>지점</td>
-               <td><input type="text" name="storeId" value=<%=rs.getInt("storeId")%> readonly></td>
-            </tr>
-            <tr>
-               <td>대여자</td>
-               <td><input type="text" name="staffId" value=<%=staffId%> readonly></td>
-            </tr>
-         </table>
-         <button type="submit">대여하기</button>
-      </form>
-   <%      
-      }
-   %>
-</body>
+	<body>
+		<h1>Insert Rental Inventory</h1>
+		<%
+			if (rs.next()) {
+		%>
+			<form action="/sakila/d0327/searchCustomIdList.jsp" method="post">
+				<input type="hidden" name="inventoryId" value='<%=inventoryId%>'>
+				<input type="text" name="searchName">
+				<button type="submit">이름으로 customerId검색</button>
+			</form>
+			<!--
+				insertRentalForm.jsp -> 이름검색 -> SearchCustomerList.jsp -> insertRentalForm.jsp 
+			 -->
+			<form action="/sakila/d0327/insertRentalAction.jsp" method="post">
+				<table border="1">
+					<tr>
+						<td>customerId</td>
+						<td>
+							<input type="text" name="customerId" value='<%=customerId%>' readonly>
+						</td>
+					</tr>
+					<tr>
+						<td>inventroyId</td>
+						<td><input type="text" name="inventoryId" value='<%=inventoryId%>' readonly></td>
+					</tr>
+					<tr>
+						<td>filmId</td>
+						<td>
+							<input type="text" name="filmId" value='<%=rs.getInt("filmId")%>' readonly> /
+							<%=rs.getString("title")%>
+						</td>
+					</tr>
+					<tr>
+						<td>storeId</td>
+						<td><input type="text" name="storeId" value='<%=rs.getInt("storeId")%>' readonly></td>
+					</tr>
+					<tr>
+						<td>staffId</td>
+						<td><input type="text" name="staffId" value='<%=staffId%>' readonly></td>
+					</tr>
+				</table>
+				<button type="submit">대여하기</button>
+			</form>
+		
+		<%
+			}
+		%>
+		
+	</body>
 </html>
