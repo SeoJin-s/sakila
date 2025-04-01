@@ -45,7 +45,7 @@
 					<%
 						if(rs.getInt("active") == 0) {
 					%>
-							<a href='/sakila/d0327/updateCustmerActive.jsp'>
+							<a href='/sakila/d0327/updateCustmerActive.jsp?customerId=<%= rs.getInt("customerId") %>'>
 							휴면 상태 해지	<!-- customer.active 0을 1로 변경 -->
 							</a> 
 					<%
